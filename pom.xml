@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.splunk-integration</groupId>
+  <artifactId>splunk-integration</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  	
+  	<repositories>
+  		<repository>
+    		<id>splunk-artifactory</id>  
+    		<name>Splunk Releases</name>
+    		<url>http://splunk.jfrog.io/splunk/ext-releases-local</url>
+  		</repository>
+	</repositories>
+	
+	<dependencies>
+  		<dependency>
+    		<groupId>com.splunk</groupId>
+    		<artifactId>splunk</artifactId>
+    		<version>1.6.0.0</version>
+ 		</dependency>
+ 		<dependency>
+
+    <groupId>org.toile-libre.libe</groupId>
+
+    <artifactId>curl</artifactId>
+
+    <version>LATEST</version>
+
+</dependency>
+	</dependencies>
+
+</project>
