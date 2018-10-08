@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class CurlExecutor2 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		String username = "painelcliente";
 		String password = "A2bFENg1qlqxRvV7JnLY";
@@ -28,6 +28,8 @@ public class CurlExecutor2 {
 		
 		//Equivalent command conversion for Java execution
 		String[] command = { "curl", "-u", username + ":" + password, "-k", url, "-d", search};
+		
+		//String[] command = { "curl", "-k", "http://www.google.com.br"};
 
 		ProcessBuilder process = new ProcessBuilder(command);
 		Process p;
@@ -36,12 +38,21 @@ public class CurlExecutor2 {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			StringBuilder builder = new StringBuilder();
 			String line = null;
+			
+			Thread.sleep(10000);
+			
 			while ((line = reader.readLine()) != null) {
 				builder.append(line);
 				builder.append(System.getProperty("line.separator"));
 			}
 			String result = builder.toString();
-			System.out.print(result);
+			
+			if(result.isEmpty()) {
+				System.out.print("Nenhum retorno!");
+			}else {
+				System.out.print(result);
+			}
+			
 
 		} catch (IOException e) {
 			System.out.print("error");
